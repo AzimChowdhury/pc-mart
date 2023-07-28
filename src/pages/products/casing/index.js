@@ -1,19 +1,19 @@
 import RootLayout from '@/components/Layout/RootLayout'
 import React from 'react'
 
-function Cpu() {
+function Casing() {
     return (
         <div>
-            <h1>this is cpu page</h1>
+            <h1>this is casing page</h1>
         </div>
     )
 }
 
-export default Cpu
+export default Casing
 
 
 
-Cpu.getLayout = function getLayout(page) {
+Casing.getLayout = function getLayout(page) {
     return (
         <RootLayout> {page}
         </RootLayout>

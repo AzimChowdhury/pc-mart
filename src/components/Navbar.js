@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 function Navbar() {
@@ -14,21 +15,22 @@ function Navbar() {
                             <li>
                                 <a>Categories</a>
                                 <ul className="p-2 w-40">
-                                    <li><a>CPU</a></li>
-                                    <li><a>Mother Board</a></li>
-                                    <li><a>Ram</a></li>
-                                    <li><a>Power Supply</a></li>
-                                    <li><a>SSD/HDD</a></li>
-                                    <li><a>Monitor</a></li>
-                                    <li><a>Keyboard</a></li>
-                                    <li><a>Mouse</a></li>
-                                    <li><a>Casing</a></li>
+                                    <li><a href='/products/cpu'>CPU</a></li>
+                                    <li><a href='/products/motherboard'>Mother Board</a></li>
+                                    <li><a href='/products/ram'>Ram</a></li>
+                                    <li><a href='/products/powersupply'>Power Supply</a></li>
+                                    <li><a href='/products/ssd'>SSD/HDD</a></li>
+                                    <li><a href='/products/monitor'>Monitor</a></li>
+                                    <li><a href='/products/keyboard'>Keyboard</a></li>
+                                    <li><a href='/products/mouse'>Mouse</a></li>
+                                    <li><a href='/products/casing'>Casing</a></li>
+
                                 </ul>
                             </li>
 
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">PC Mart</a>
+                    <Link href={'/'}><p className='text-blue-700 text-3xl font-semibold hover:font-bold'>PC Mart</p></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -37,15 +39,15 @@ function Navbar() {
                             <details>
                                 <summary className='text-lg'>Categories</summary>
                                 <ul className="p-2 w-40">
-                                    <li><a>CPU</a></li>
-                                    <li><a>Mother Board</a></li>
-                                    <li><a>Ram</a></li>
-                                    <li><a>Power Supply</a></li>
-                                    <li><a>SSD/HDD</a></li>
-                                    <li><a>Monitor</a></li>
-                                    <li><a>Keyboard</a></li>
-                                    <li><a>Mouse</a></li>
-                                    <li><a>Casing</a></li>
+                                    <li><a href='/products/cpu'>CPU</a></li>
+                                    <li><a href='/products/motherboard'>Mother Board</a></li>
+                                    <li><a href='/products/ram'>Ram</a></li>
+                                    <li><a href='/products/powersupply'>Power Supply</a></li>
+                                    <li><a href='/products/ssd'>SSD/HDD</a></li>
+                                    <li><a href='/products/monitor'>Monitor</a></li>
+                                    <li><a href='/products/keyboard'>Keyboard</a></li>
+                                    <li><a href='/products/mouse'>Mouse</a></li>
+                                    <li><a href='/products/casing'>Casing</a></li>
                                 </ul>
                             </details>
                         </li>

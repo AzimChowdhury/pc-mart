@@ -1,19 +1,17 @@
 import RootLayout from '@/components/Layout/RootLayout'
 import React from 'react'
 
-function Cpu() {
+function Mouse() {
     return (
         <div>
-            <h1>this is cpu page</h1>
+            <h1>this is Mouse page</h1>
         </div>
     )
 }
 
-export default Cpu
+export default Mouse
 
-
-
-Cpu.getLayout = function getLayout(page) {
+Mouse.getLayout = function getLayout(page) {
     return (
         <RootLayout> {page}
         </RootLayout>

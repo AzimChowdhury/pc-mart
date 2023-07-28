@@ -1,19 +1,17 @@
 import RootLayout from '@/components/Layout/RootLayout'
 import React from 'react'
 
-function Cpu() {
+function PowerSupply() {
     return (
         <div>
-            <h1>this is cpu page</h1>
+            <h1>this is PowerSupply page</h1>
         </div>
     )
 }
 
-export default Cpu
+export default PowerSupply
 
-
-
-Cpu.getLayout = function getLayout(page) {
+PowerSupply.getLayout = function getLayout(page) {
     return (
         <RootLayout> {page}
         </RootLayout>

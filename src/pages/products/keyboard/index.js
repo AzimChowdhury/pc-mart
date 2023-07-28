@@ -1,19 +1,19 @@
 import RootLayout from '@/components/Layout/RootLayout'
 import React from 'react'
 
-function Cpu() {
+function Keyboard() {
     return (
         <div>
-            <h1>this is cpu page</h1>
+            <h1>this is keyboard page</h1>
         </div>
     )
 }
 
-export default Cpu
+export default Keyboard
 
 
 
-Cpu.getLayout = function getLayout(page) {
+Keyboard.getLayout = function getLayout(page) {
     return (
         <RootLayout> {page}
         </RootLayout>

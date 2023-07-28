@@ -1,19 +1,18 @@
 import RootLayout from '@/components/Layout/RootLayout'
 import React from 'react'
 
-function Cpu() {
+function Ram() {
     return (
         <div>
-            <h1>this is cpu page</h1>
+            <h1>this is Ram page</h1>
         </div>
     )
 }
 
-export default Cpu
+export default Ram
 
 
-
-Cpu.getLayout = function getLayout(page) {
+Ram.getLayout = function getLayout(page) {
     return (
         <RootLayout> {page}
         </RootLayout>
