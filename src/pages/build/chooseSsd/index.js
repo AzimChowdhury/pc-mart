@@ -1,12 +1,12 @@
 "use  client"
 import RootLayout from '@/components/Layout/RootLayout';
-import { ProcessorContext } from '@/pages/_app';
+import { SsdContext } from '@/pages/_app';
 import { useRouter } from 'next/router';
 import { useContext } from 'react'
 
-function ChooseCpu({ data }) {
+function ChooseSsd({ data }) {
     const router = useRouter()
-    const { setProcessor } = useContext(ProcessorContext)
+    const { setSsd } = useContext(SsdContext)
     return (
         <div className=' grid grid-cols-2  gap-10 mx-48 my-10'>
             {data.map(d => <>
@@ -18,7 +18,7 @@ function ChooseCpu({ data }) {
                         <p className='text-lg font-semibold pr-4 pt-2'>category : {d.category}</p>
                         <p className='text-lg font-semibold pr-4 pt-2'>status : {d.status}</p>
                         <p className='text-lg font-semibold pr-4 pt-2'>rating : {d.rating}/5</p>
-                        <button onClick={() => { setProcessor(d); router.push('/build') }} className='btn bg-blue-700 hover:bg-blue-800 text-white m-3'>Select</button>
+                        <button onClick={() => { setSsd(d); router.push('/build') }} className='btn bg-blue-700 hover:bg-blue-800 text-white m-3'>Select</button>
                     </div>
                 </div>
             </>)}
@@ -26,12 +26,12 @@ function ChooseCpu({ data }) {
     )
 }
 
-export default ChooseCpu
+export default ChooseSsd
 
 
 
 export async function getServerSideProps() {
-    const response = await fetch('http://localhost:5000/processors');
+    const response = await fetch('http://localhost:5000/ssds');
     const data = await response.json();
     return {
         props: {
@@ -42,7 +42,7 @@ export async function getServerSideProps() {
 
 
 
-ChooseCpu.getLayout = function getLayout(page) {
+ChooseSsd.getLayout = function getLayout(page) {
     return (
         <RootLayout> {page}
         </RootLayout>
