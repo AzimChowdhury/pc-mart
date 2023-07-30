@@ -44,18 +44,6 @@ Casing.getLayout = function getLayout(page) {
     )
 }
 
-export async function getStaticPaths() {
-    const res = await fetch('https://pc-mart-server.vercel.app/casings')
-    const posts = await res.json()
-
-    const paths = posts.map((post) => ({
-        params: { id: post._id },
-    }))
-    return { paths, fallback: false }
-}
-
-
-
 
 export async function getStaticProps() {
     const response = await fetch('https://pc-mart-server.vercel.app/casings');
