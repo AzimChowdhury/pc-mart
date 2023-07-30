@@ -2,6 +2,7 @@
 import RootLayout from '@/components/Layout/RootLayout';
 import { MonitorContext } from '@/pages/_app';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import { useContext } from 'react'
 
 function ChooseMonitor({ data }) {
@@ -11,7 +12,7 @@ function ChooseMonitor({ data }) {
         <div className=' grid grid-cols-2  gap-10 mx-48 my-10'>
             {data?.map(d => <>
                 <div className='w-full flex border-2 border-gray-400 rounded-xl '>
-                    <img src={d.img} alt='' />
+                    <Image width={250} height={250} src={product.img} alt='' />
                     <div className='ml-3'>
                         <p className='text-xl font-semibold pr-4 pt-4' >{d.name}</p>
                         <p className='text-lg font-semibold pr-4 pt-2'>price : ${d.price}</p>

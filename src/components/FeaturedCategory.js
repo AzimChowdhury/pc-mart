@@ -1,4 +1,5 @@
 
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -13,7 +14,7 @@ function FeaturedCategory({ randomProducts }) {
                             randomProducts?.map(product => <>
                                 <div key={product._id} className="card p-5 bg-base-100 h-auto shadow-2xl  shadow-slate-500  ">
                                     <figure className=" ">
-                                        <img className='w-48 rounded-xl' src={product.img} alt="" />
+                                        <Image width={250} height={250} src={product.img} alt='' />
                                     </figure>
                                     <div className=" items-center text-center">
                                         <h2 className=" text-lg font-semibold">Category: {product.category}</h2>
