@@ -11,16 +11,17 @@ function Monitor({ data }) {
                     <div className='grid grid-cols-4 gap-10'>
                         {
                             data.map(monitor => <>
-                                <div key={monitor._id} className="card  bg-base-100 h-96 shadow-2xl  shadow-slate-500  ">
-                                    <figure className="px-10 pt-10">
+                                <div key={monitor._id} className="card p-5 bg-base-100 h-auto shadow-2xl  shadow-slate-500  ">
+                                    <figure className=" ">
                                         <img className='w-48 rounded-xl' src={monitor.img} alt="" />
                                     </figure>
-                                    <div className="card-body items-center text-center">
-                                        <h2 className="card-title">{monitor.name}</h2>
+                                    <div className=" items-center text-center">
+                                        <h2 className=" text-lg font-semibold">{monitor.name}</h2>
                                         <p >Category: {monitor.category}</p>
                                         <p>price: $ {monitor.price}</p>
                                         <p>status:  {monitor.status}</p>
                                         <p>rating: {monitor.rating}/5</p>
+                                        <Link href={`/details/${monitor._id}`} ><button className='btn btn-primary btn-sm'>Details</button></Link>
                                     </div>
                                 </div>
                             </>)

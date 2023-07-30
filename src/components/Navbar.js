@@ -14,7 +14,7 @@ function Navbar() {
 
                             <li>
                                 <a>Categories</a>
-                                <ul className="p-2 w-40">
+                                <ul className="p-2 w-40 z-50">
                                     <li><a href='/products/cpu'>CPU</a></li>
                                     <li><a href='/products/motherboard'>Mother Board</a></li>
                                     <li><a href='/products/ram'>Ram</a></li>
@@ -38,7 +38,7 @@ function Navbar() {
                         <li tabIndex={0}>
                             <details>
                                 <summary className='text-lg'>Categories</summary>
-                                <ul className="p-2 w-40">
+                                <ul className="p-2 w-40 z-50">
                                     <li><a href='/products/cpu'>CPU</a></li>
                                     <li><a href='/products/motherboard'>Mother Board</a></li>
                                     <li><a href='/products/ram'>Ram</a></li>
@@ -55,7 +55,7 @@ function Navbar() {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn bg-blue-700 text-white hover:bg-blue-800">Build now</a>
+                    <a href='/build' className="btn bg-blue-700 text-white hover:bg-blue-800">Build now</a>
                 </div>
             </div>
         </div>
