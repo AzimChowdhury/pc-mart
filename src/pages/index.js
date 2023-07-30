@@ -28,9 +28,9 @@ HomePage.getLayout = function getLayout(page) {
 
 
 export async function getStaticProps() {
-  const response = await fetch('http://localhost:5000/random');
+  const response = await fetch('https://pc-mart-server.vercel.app/random');
   const randomProducts = await response.json();
-  const response2 = await fetch('http://localhost:5000/randomcategories');
+  const response2 = await fetch('https://pc-mart-server.vercel.app/randomcategories');
   const randomCategories = await response2.json();
   return {
     props: {

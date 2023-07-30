@@ -1,6 +1,8 @@
-Live Url -
-Frontend Code - https://github.com/AzimChowdhury/pc-mart.git
-Backend code -
+# Live Url -
+
+# Frontend Code - https://github.com/AzimChowdhury/pc-mart.git
+
+# Backend code - https://github.com/AzimChowdhury/pc-mart-server.git
 
 ## Getting Started
 

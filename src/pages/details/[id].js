@@ -52,7 +52,7 @@ DetailsPage.getLayout = function getLayout(page) {
 }
 export async function getStaticProps({ params }) {
     const { id } = params;
-    const response = await fetch(`http://localhost:5000/details/${id}`);
+    const response = await fetch(`https://pc-mart-server.vercel.app/details/${id}`);
     const data = await response.json();
     return {
         props: {

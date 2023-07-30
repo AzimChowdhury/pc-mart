@@ -9,7 +9,7 @@ function ChooseMonitor({ data }) {
     const { setMonitor } = useContext(MonitorContext)
     return (
         <div className=' grid grid-cols-2  gap-10 mx-48 my-10'>
-            {data.map(d => <>
+            {data?.map(d => <>
                 <div className='w-full flex border-2 border-gray-400 rounded-xl '>
                     <img src={d.img} alt='' />
                     <div className='ml-3'>
@@ -31,7 +31,7 @@ export default ChooseMonitor
 
 
 export async function getServerSideProps() {
-    const response = await fetch('http://localhost:5000/monitors');
+    const response = await fetch('https://pc-mart-server.vercel.app/monitors');
     const data = await response.json();
     return {
         props: {

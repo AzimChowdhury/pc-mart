@@ -15,17 +15,17 @@ function Navbar() {
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
 
                             <li>
-                                <a>Categories</a>
+                                <p>Categories</p>
                                 <ul className="p-2 w-40 z-50">
-                                    <li><a href='/products/cpu'>CPU</a></li>
-                                    <li><a href='/products/motherboard'>Mother Board</a></li>
-                                    <li><a href='/products/ram'>Ram</a></li>
-                                    <li><a href='/products/powersupply'>Power Supply</a></li>
-                                    <li><a href='/products/ssd'>SSD/HDD</a></li>
-                                    <li><a href='/products/monitor'>Monitor</a></li>
-                                    <li><a href='/products/keyboard'>Keyboard</a></li>
-                                    <li><a href='/products/mouse'>Mouse</a></li>
-                                    <li><a href='/products/casing'>Casing</a></li>
+                                    <li><Link href='/products/cpu'>CPU</Link></li>
+                                    <li><Link href='/products/motherboard'>Mother Board</Link></li>
+                                    <li><Link href='/products/ram'>Ram</Link></li>
+                                    <li><Link href='/products/powersupply'>Power Supply</Link></li>
+                                    <li><Link href='/products/ssd'>SSD/HDD</Link></li>
+                                    <li><Link href='/products/monitor'>Monitor</Link></li>
+                                    <li><Link href='/products/keyboard'>Keyboard</Link></li>
+                                    <li><Link href='/products/mouse'>Mouse</Link></li>
+                                    <li><Link href='/products/casing'>Casing</Link></li>
 
                                 </ul>
                             </li>
@@ -41,15 +41,15 @@ function Navbar() {
                             <details>
                                 <summary className='text-lg'>Categories</summary>
                                 <ul className="p-2 w-40 z-50">
-                                    <li><a href='/products/cpu'>CPU</a></li>
-                                    <li><a href='/products/motherboard'>Mother Board</a></li>
-                                    <li><a href='/products/ram'>Ram</a></li>
-                                    <li><a href='/products/powersupply'>Power Supply</a></li>
-                                    <li><a href='/products/ssd'>SSD/HDD</a></li>
-                                    <li><a href='/products/monitor'>Monitor</a></li>
-                                    <li><a href='/products/keyboard'>Keyboard</a></li>
-                                    <li><a href='/products/mouse'>Mouse</a></li>
-                                    <li><a href='/products/casing'>Casing</a></li>
+                                    <li><Link href='/products/cpu'>CPU</Link></li>
+                                    <li><Link href='/products/motherboard'>Mother Board</Link></li>
+                                    <li><Link href='/products/ram'>Ram</Link></li>
+                                    <li><Link href='/products/powersupply'>Power Supply</Link></li>
+                                    <li><Link href='/products/ssd'>SSD/HDD</Link></li>
+                                    <li><Link href='/products/monitor'>Monitor</Link></li>
+                                    <li><Link href='/products/keyboard'>Keyboard</Link></li>
+                                    <li><Link href='/products/mouse'>Mouse</Link></li>
+                                    <li><Link href='/products/casing'>Casing</Link></li>
                                 </ul>
                             </details>
                         </li>
@@ -57,7 +57,7 @@ function Navbar() {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a href='/build' className="btn bg-blue-700 text-white hover:bg-blue-800">Build now</a>
+                    <Link href='/build' className="btn bg-blue-700 text-white hover:bg-blue-800">Build now</Link>
                     {session?.user?.email ?
                         <button onClick={() => signOut()} className="btn bg-blue-700 text-white hover:bg-blue-800 mx-3">Logout</button>
                         :
