@@ -94,7 +94,7 @@ function Build() {
                 </div>
                 <div className='flex justify-center'>
                     <p className='flex items-center text-3xl font-semibold mx-5'>Total Price: $ {total ? total : 0}</p>
-                    <button onClick={() => console.log('log')}
+                    <button onClick={() => alert('pc build successful')}
                         disabled={
                             !(processor && motherboard && ram && ssd && powerSupply && casing && monitor && keyboard && mouse)
                         }
