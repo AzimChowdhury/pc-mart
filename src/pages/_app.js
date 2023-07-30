@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import { createContext, useState } from 'react'
-
+import { SessionProvider } from "next-auth/react"
+import Navbar from '@/components/Navbar'
 export const ProcessorContext = createContext('none')
 export const MotherboardContext = createContext('none')
 export const RamContext = createContext('none')
@@ -22,34 +23,34 @@ export default function MyApp({ Component, pageProps }) {
   const [monitor, setMonitor] = useState(null)
   const [keyboard, setKeyboard] = useState(null)
   const [mouse, setMouse] = useState(null)
-
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout || ((page) => page)
 
   return getLayout(
-    <ProcessorContext.Provider value={{ processor, setProcessor }}>
-      <MotherboardContext.Provider value={{ motherboard, setMotherboard }}>
-        <RamContext.Provider value={{ ram, setRam }}>
-          <SsdContext.Provider value={{ ssd, setSsd }}>
-            <PowerSupplyContext.Provider value={{ powerSupply, setPowerSupply }}>
-              <CasingContext.Provider value={{ casing, setCasing }}>
-                <MonitorContext.Provider value={{ monitor, setMonitor }}>
-                  <KeyboardContext.Provider value={{ keyboard, setKeyboard }}>
-                    <MouseContext.Provider value={{ mouse, setMouse }}>
+    <SessionProvider session={pageProps.session}>
+      <ProcessorContext.Provider value={{ processor, setProcessor }}>
+        <MotherboardContext.Provider value={{ motherboard, setMotherboard }}>
+          <RamContext.Provider value={{ ram, setRam }}>
+            <SsdContext.Provider value={{ ssd, setSsd }}>
+              <PowerSupplyContext.Provider value={{ powerSupply, setPowerSupply }}>
+                <CasingContext.Provider value={{ casing, setCasing }}>
+                  <MonitorContext.Provider value={{ monitor, setMonitor }}>
+                    <KeyboardContext.Provider value={{ keyboard, setKeyboard }}>
+                      <MouseContext.Provider value={{ mouse, setMouse }}>
+
+                        <Navbar />
+                        <Component {...pageProps} />
 
 
-                      <Component {...pageProps} />
-
-
-                    </MouseContext.Provider>
-                  </KeyboardContext.Provider>
-                </MonitorContext.Provider>
-              </CasingContext.Provider>
-            </PowerSupplyContext.Provider>
-          </SsdContext.Provider>
-        </RamContext.Provider>
-      </MotherboardContext.Provider>
-    </ProcessorContext.Provider>
-
+                      </MouseContext.Provider>
+                    </KeyboardContext.Provider>
+                  </MonitorContext.Provider>
+                </CasingContext.Provider>
+              </PowerSupplyContext.Provider>
+            </SsdContext.Provider>
+          </RamContext.Provider>
+        </MotherboardContext.Provider>
+      </ProcessorContext.Provider>
+    </SessionProvider>
   )
 }

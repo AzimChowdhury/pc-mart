@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 
 function Banner() {
+
     return (
         <div className='lg:flex justify-around'>
             <div className='pl-20 mt-28 font'>

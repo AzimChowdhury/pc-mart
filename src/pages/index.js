@@ -5,6 +5,7 @@ import RootLayout from '@/components/Layout/RootLayout'
 import React from 'react'
 
 function HomePage({ randomProducts, randomCategories }) {
+
   return (
     <div>
       <Banner />

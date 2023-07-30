@@ -1,7 +1,9 @@
+import { signIn, signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import React from 'react'
 
 function Navbar() {
+    const { data: session } = useSession()
     return (
         <div>
             <div className="navbar bg-base-100 lg:px-20">
@@ -56,6 +58,12 @@ function Navbar() {
                 </div>
                 <div className="navbar-end">
                     <a href='/build' className="btn bg-blue-700 text-white hover:bg-blue-800">Build now</a>
+                    {session?.user?.email ?
+                        <button onClick={() => signOut()} className="btn bg-blue-700 text-white hover:bg-blue-800 mx-3">Logout</button>
+                        :
+                        <button onClick={() => signIn("github")} className="btn bg-blue-700 text-white hover:bg-blue-800 mx-3">Login</button>
+                    }
+
                 </div>
             </div>
         </div>
