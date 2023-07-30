@@ -1,6 +1,7 @@
 import RootLayout from '@/components/Layout/RootLayout'
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image';
 
 function Mouse({ data }) {
     return (
@@ -13,7 +14,7 @@ function Mouse({ data }) {
                             data?.map(mouse => <>
                                 <div key={mouse._id} className="card p-5 bg-base-100 h-auto shadow-2xl  shadow-slate-500  ">
                                     <figure className=" ">
-                                        <Image width={250} height={250} src={product.img} alt='' /> className='w-48 rounded-xl' src={mouse.img} alt="" />
+                                        <Image width={250} height={250} src={product.img} alt='' />
                                     </figure>
                                     <div className=" items-center text-center">
                                         <h2 className=" text-lg font-semibold">{mouse.name}</h2>

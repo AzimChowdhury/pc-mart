@@ -1,6 +1,8 @@
 import RootLayout from '@/components/Layout/RootLayout'
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image';
+
 
 function PowerSupply({ data }) {
     return (
@@ -13,7 +15,7 @@ function PowerSupply({ data }) {
                             data?.map(powerSupply => <>
                                 <div key={powerSupply._id} className="card p-5 bg-base-100 h-auto shadow-2xl  shadow-slate-500  ">
                                     <figure className=" ">
-                                        <Image width={250} height={250} src={product.img} alt='' /> className='w-48 rounded-xl' src={powerSupply.img} alt="" />
+                                        <Image width={250} height={250} src={product.img} alt='' />
                                     </figure>
                                     <div className=" items-center text-center">
                                         <h2 className=" text-lg font-semibold">{powerSupply.name}</h2>

@@ -10,7 +10,7 @@ function HomePage({ randomProducts, randomCategories }) {
     <div>
       <Banner />
       <FeaturedProducts randomProducts={randomProducts} />
-      <FeaturedCategory randomProducts={randomCategories} />
+      <FeaturedCategory randomCategories={randomCategories} />
     </div>
   )
 }

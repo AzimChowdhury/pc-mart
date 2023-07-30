@@ -1,4 +1,5 @@
 import RootLayout from '@/components/Layout/RootLayout'
+import Image from 'next/image';
 import { useRouter } from 'next/router'
 import React from 'react'
 
@@ -10,7 +11,7 @@ function DetailsPage({ data }) {
         <div>
             <div className="hero min-h-screen ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <Image width={250} height={250} src={product.img} alt='' /> src={data.img} className=" w-96 rounded-lg shadow-2xl" />
+                    <Image width={250} height={250} src={product.img} alt='' />
                     <div>
                         <h1 className="text-2xl font-bold">{data.name}</h1>
                         <p className="text-xl py-1">category: {data.category}</p>
@@ -29,7 +30,7 @@ function DetailsPage({ data }) {
                     {
                         data?.review?.map((review, index) =>
                             <div key={index} className='flex my-2 items-center'>
-                                <Image width={250} height={250} src={product.img} alt='' /> className='w-12  border-2 rounded-3xl border-black' src="https://icon-library.com/images/person-png-icon/person-png-icon-29.jpg" alt="" />
+                                <Image width={250} height={250} src={product.img} alt='' />
                                 <p className='mx-2'>{review}</p>
                             </div>
                         )
