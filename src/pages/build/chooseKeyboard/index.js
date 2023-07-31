@@ -14,7 +14,7 @@ function ChooseKeyboard({ data }) {
         <div className=' grid grid-cols-2  gap-10 mx-48 my-10'>
             {data?.map(d => <>
                 <div className='w-full flex border-2 border-gray-400 rounded-xl '>
-                    <Image width={250} height={250} src={product.img} alt='' />
+                    <Image width={250} height={250} src={d.img} alt='' />
                     <div className='ml-3'>
                         <p className='text-xl font-semibold pr-4 pt-4' >{d.name}</p>
                         <p className='text-lg font-semibold pr-4 pt-2'>price : ${d.price}</p>
@@ -34,13 +34,22 @@ export default ChooseKeyboard
 
 
 export async function getServerSideProps() {
-    const response = await fetch('https://pc-mart-server.vercel.app/keyboards');
-    const data = await response.json();
-    return {
-        props: {
-            data
-        }
-    };
+    try {
+        const response = await fetch('https://pc-mart-server.vercel.app/keyboards');
+        const data = await response.json();
+        return {
+            props: {
+                data
+            }
+        };
+    } catch (error) {
+        return {
+            props: {
+                data: [],
+            }
+        };
+    }
+
 }
 
 
