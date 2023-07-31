@@ -11,7 +11,7 @@ function DetailsPage({ data }) {
         <div>
             <div className="hero min-h-screen ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <Image width={250} height={250} src={product.img} alt='' />
+                    <Image width={250} height={250} src={data.img} alt='' />
                     <div>
                         <h1 className="text-2xl font-bold">{data.name}</h1>
                         <p className="text-xl py-1">category: {data.category}</p>
@@ -30,7 +30,7 @@ function DetailsPage({ data }) {
                     {
                         data?.review?.map((review, index) =>
                             <div key={index} className='flex my-2 items-center'>
-                                <Image width={250} height={250} src={product.img} alt='' />
+                                <Image width={30} height={30} src="https://i.ibb.co/cDZh17j/man-face-clipart-design-illustration-free-png.webp" alt='' />
                                 <p className='mx-2'>{review}</p>
                             </div>
                         )
@@ -53,15 +53,24 @@ DetailsPage.getLayout = function getLayout(page) {
 }
 export async function getStaticProps({ params }) {
     const { id } = params;
-    const response = await fetch(`https://pc-mart-server.vercel.app/details/${id}`);
-    const data = await response.json();
-    return {
-        props: {
-            data,
-        },
-        //   3 hours
-        revalidate: 10800,
-    };
+    try {
+        const response = await fetch(`https://pc-mart-server.vercel.app/details/${id}`);
+        const data = await response.json();
+        return {
+            props: {
+                data,
+            },
+            //   3 hours
+            revalidate: 10800,
+        };
+    } catch (error) {
+        return {
+            props: {
+                data: {},
+            }
+        };
+    }
+
 }
 
 export async function getStaticPaths() {

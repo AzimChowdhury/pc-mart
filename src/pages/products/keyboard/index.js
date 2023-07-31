@@ -14,7 +14,7 @@ function KeyBoard({ data }) {
                             data?.map(keyboard => <>
                                 <div key={keyboard._id} className="card p-5 bg-base-100 h-auto shadow-2xl  shadow-slate-500  ">
                                     <figure className=" ">
-                                        <Image width={250} height={250} src={product.img} alt='' />
+                                        <Image width={250} height={250} src={keyboard.img} alt='' />
                                     </figure>
                                     <div className=" items-center text-center">
                                         <h2 className=" text-lg font-semibold">{keyboard.name}</h2>
@@ -45,13 +45,22 @@ KeyBoard.getLayout = function getLayout(page) {
 }
 
 export async function getStaticProps() {
-    const response = await fetch('https://pc-mart-server.vercel.app/keyboards');
-    const data = await response.json();
-    return {
-        props: {
-            data,
-        },
-        //   3 hour
-        revalidate: 10800,
-    };
+    try {
+        const response = await fetch('https://pc-mart-server.vercel.app/keyboards');
+        const data = await response.json();
+        return {
+            props: {
+                data,
+            },
+            //   3 hour
+            revalidate: 10800,
+        };
+    } catch (error) {
+        return {
+            props: {
+                data: [],
+            }
+        };
+    }
+
 }

@@ -15,7 +15,7 @@ function SSD({ data }) {
                             data?.map(ssd => <>
                                 <div key={ssd._id} className="card p-5 bg-base-100 h-auto shadow-2xl  shadow-slate-500  ">
                                     <figure className=" ">
-                                        <Image width={250} height={250} src={product.img} alt='' />
+                                        <Image width={250} height={250} src={ssd.img} alt='' />
                                     </figure>
                                     <div className=" items-center text-center">
                                         <h2 className=" text-lg font-semibold">{ssd.name}</h2>
@@ -46,13 +46,22 @@ SSD.getLayout = function getLayout(page) {
 }
 
 export async function getStaticProps() {
-    const response = await fetch('https://pc-mart-server.vercel.app/ssds');
-    const data = await response.json();
-    return {
-        props: {
-            data,
-        },
-        //   3 hour
-        revalidate: 10800,
-    };
+    try {
+        const response = await fetch('https://pc-mart-server.vercel.app/ssds');
+        const data = await response.json();
+        return {
+            props: {
+                data,
+            },
+            //   3 hour
+            revalidate: 10800,
+        };
+    } catch (error) {
+        return {
+            props: {
+                data: [],
+            }
+        };
+    }
+
 }

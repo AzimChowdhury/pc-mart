@@ -19,22 +19,36 @@ export default HomePage
 
 
 
+export async function getStaticProps() {
+  try {
+
+    const response = await fetch('https://pc-mart-server.vercel.app/random');
+    const randomProducts = await response.json();
+
+    const response2 = await fetch('https://pc-mart-server.vercel.app/randomcategories');
+    const randomCategories = await response2.json();
+
+    return {
+      props: {
+        randomProducts,
+        randomCategories,
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return {
+      props: {
+        randomProducts: [],
+        randomCategories: [],
+      },
+    };
+  }
+}
+
+
 HomePage.getLayout = function getLayout(page) {
   return (
     <RootLayout> {page}
     </RootLayout>
   )
-}
-
-
-export async function getStaticProps() {
-  const response = await fetch('https://pc-mart-server.vercel.app/random');
-  const randomProducts = await response.json();
-  const response2 = await fetch('https://pc-mart-server.vercel.app/randomcategories');
-  const randomCategories = await response2.json();
-  return {
-    props: {
-      randomProducts, randomCategories
-    }
-  };
 }
