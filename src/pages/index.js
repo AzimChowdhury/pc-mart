@@ -22,10 +22,10 @@ export default HomePage
 export async function getStaticProps() {
   try {
 
-    const response = await fetch('https://pc-mart-server.vercel.app/random');
+    const response = await fetch(`${process.env.SERVER_URL}/random`);
     const randomProducts = await response.json();
 
-    const response2 = await fetch('https://pc-mart-server.vercel.app/randomcategories');
+    const response2 = await fetch(`${process.env.SERVER_URL}/randomcategories`);
     const randomCategories = await response2.json();
 
     return {
